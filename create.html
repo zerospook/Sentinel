@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AMC Master - Create Entry</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="date-time">
+            <p id="datetime"></p>
+        </div>
+        <img src="./images/logo.png" alt="HPCL Logo" class="logo">
+        <h2 class="title">Entry Form</h2>
+
+        <div class="button-container" id="homePageContent">
+            <button onclick="goHome()">Home</button>
+            <div class="dropdown" onmouseleave="hideDropdown()">
+                <button class="user-dropdown-btn" onclick="toggleDropdown()"
+                    onmouseover="toggleDropdown()">User</button>
+                <div class="dropdown-content">
+                    <a href="#">About User</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="createContent">
+        <form id="dataForm">
+            <label for="deviceCategory">Device Category:</label>
+            <select id="deviceCategory" name="deviceCategory">
+                <option value="" selected disabled hidden>Select from here</option>
+                <option value="Desktop">Desktop</option>
+                <option value="Printer">Printer</option>
+                <option value="AllInOne">All in One</option>
+                <option value="Scanner">Scanner</option>
+                <option value="Server">Server</option>
+                <option value="VCDevice">VC Device</option>
+                <option value="NetworkDevice">Network Device</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <br><br>
+            <label for="purchasePONumber">Purchase PO Number:</label>
+            <input type="text" id="purchasePONumber" name="purchasePONumber" required>
+
+            <label for="assetName">Asset Name:</label>
+            <input type="text" id="assetName" name="assetName" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="0" required>
+
+            <label for="underWarranty">Under Warranty?</label>
+            <select id="underWarranty" name="underWarranty" onchange="handleWarrantyChange()">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <br><br>
+            <label for="amcStatus">AMC Status:</label>
+            <select id="amcStatus" name="amcStatus" disabled>
+                <option value="UnderAMC">Under AMC</option>
+                <option value="NotInAMC">Not in AMC</option>
+            </select>
+
+            <br><br>
+            <label for="amcPONumber">AMC PO Number:</label>
+            <input type="text" id="amcPONumber" name="amcPONumber" disabled>
+
+            <label for="amcValidity">AMC Validity Upto:</label>
+            <input type="date" id="amcValidity" name="amcValidity" disabled>
+
+            <label for="purchaseDate">Purchase Date:</label>
+            <input type="date" id="purchaseDate" name="purchaseDate" onchange="calculateAssetAge()" required>
+
+            <label for="assetAge">Asset Age:</label>
+            <input type="number" id="assetAge" name="assetAge" readonly>
+
+            <label for="entitled">Entitled To:</label>
+            <input type="text" id="entitledName" name="entitledName">
+
+            <div>
+                <button type="button" onclick="resetForm()" style="background-color: red; color: white;">Reset
+                    All</button>
+                <button type="button" onclick="submitForm()"
+                    style="background-color: green; color: white;">Enter</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

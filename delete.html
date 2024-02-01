@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AMC Master - Delete Record</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="date-time">
+            <p id="datetime"></p>
+        </div>
+        <img src="./images/logo.png" alt="HPCL Logo" class="logo">
+        <h2 class="title">Delete Record Page</h2>
+
+        <div class="button-container" id="homePageContent">
+            <button onclick="goHome()">Home</button>
+            <div class="dropdown" onmouseleave="hideDropdown()">
+                <button class="user-dropdown-btn" onclick="toggleDropdown()"
+                    onmouseover="toggleDropdown()">User</button>
+                <div class="dropdown-content">
+                    <a href="#">About User</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Form -->
+    <div id="deleteContent">
+        <label for="searchOption">Search Record by:</label>
+        <select id="searchOption" name="searchOption">
+            <option value="purchasePO">Purchase PO</option>
+            <option value="amcPO">AMC PO</option>
+            <option value="assetName">Asset Name</option>
+        </select>
+
+        <br><br>
+        <input type="text" id="searchValue" name="searchValue" placeholder="Enter search value" required>
+
+        <button onclick="searchAndPopulate()">Search</button>
+    </div>
+
+    <!-- Result Table -->
+    <table id="deleteTable">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Device Category</th>
+                <th>Purchase PO Number</th>
+                <th>Asset Name</th>
+                <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Populated dynamically based on search results -->
+        </tbody>
+    </table>
+
+    <!-- Delete Button -->
+    <button class="delete-btn" onclick="deleteSelected()">Delete Selected</button>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

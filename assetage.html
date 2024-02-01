@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AMC Master - Asset Age</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="date-time">
+            <p id="datetime"></p>
+        </div>
+        <img src="./images/logo.png" alt="HPCL Logo" class="logo">
+        <h2 class="title">Asset Age Page</h2>
+
+        <div class="button-container" id="homePageContent">
+            <button onclick="goHome()">Home</button>
+            <div class="dropdown" onmouseleave="hideDropdown()">
+                <button class="user-dropdown-btn" onclick="toggleDropdown()"
+                    onmouseover="toggleDropdown()">User</button>
+                <div class="dropdown-content">
+                    <a href="#">About User</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Asset Age Form -->
+    <div id="assetAgeContent">
+        <label for="assetAge">Show assets &gt; </label>
+        <input type="number" id="assetAge" name="assetAge" placeholder="Yrs" style="width: 55px;" min="0" required>
+        <button onclick="showAssets()">Show</button>
+    </div>
+
+    <!-- Result Table -->
+    <table id="assetAgeTable">
+        <thead>
+            <tr>
+                <th>Device Category</th>
+                <th>Purchase PO Number</th>
+                <th>Asset Name</th>
+                <th>Asset Age (Years)</th>
+                <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Populated dynamically based on user input -->
+        </tbody>
+    </table>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

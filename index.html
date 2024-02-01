@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AMC Master - Authentication</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="date-time">
+            <p id="datetime"></p>
+        </div>
+        <img src="./images/logo.png" alt="HPCL Logo" class="logo">
+        <h1 class="title">AMC Master</h1>
+        <h2 class="title">AMC Tracker & Alert System</h2><br>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" name="userId" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Manage Users Button -->
+        <button class="manage-users-btn" onclick="manageUsers()">Manage Users</button>
+
+        <script src="index.js"></script>
+</body>
+
+</html>

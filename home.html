@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AMC Master - HOMEPAGE</title>
+</head>
+
+<body onload="updateUI(true)">
+    <div class="container">
+        <div class="date-time">
+            <p id="datetime"></p>
+        </div>
+        <img src="./images/logo.png" alt="HPCL Logo" class="logo">
+        <h2 class="title">AMC Master - HOMEPAGE</h2>
+
+        <div class="button-container" id="homePageContent">
+            <button onclick="goHome()">Home</button>
+            <div class="dropdown" onmouseleave="hideDropdown()">
+                <button class="user-dropdown-btn" onclick="toggleDropdown()"
+                    onmouseover="toggleDropdown()">User</button>
+                <div class="dropdown-content">
+                    <a href="#">About User</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons" id="actionButtons">
+            <!-- Action Buttons for Home Page Row 1 -->
+            <button class="action-btn" onclick="navigate('Create')">Create</button>
+            <button class="action-btn" onclick="navigate('Update')">Update</button>
+            <button class="action-btn" onclick="navigate('Report')">Report</button>
+
+            <!-- Action Buttons for Home Page Row 2 -->
+            <button class="action-btn" onclick="navigate('Delete')">Delete</button>
+            <button class="action-btn" onclick="navigate('AssetAge')">Asset Age</button>
+            <button class="action-btn" onclick="navigate('UpcomingAlerts')">Upcoming Alerts</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
